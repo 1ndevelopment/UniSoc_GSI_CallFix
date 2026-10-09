@@ -1,10 +1,10 @@
 # GSI on Unisoc Incoming Call Fix
 
-Magisk module that restores incoming calls on some Unisoc mobiles, running a GSI (Generic System Image). Most mobile operators require VoLTE. The stock firmware's Unisoc IMS stack is deployed to trigger IMS PDN establishment via `urild`'s `vendor.unisoc.hardware.radio.ims.IImsRadio/slot1`.
+Magisk module that restores incoming calls on some Unisoc mobiles, running a GSI (Generic System Image). The Stock Unisoc IMS stack is deployed to trigger IMS PDN establishment via `urild`'s `vendor.unisoc.hardware.radio.ims.IImsRadio/slot1`.
 
 ## Root Cause
 
-- Voice calls must use VoLTE.
+- Voice calls must use VoLTE. (Most mobile operators require VoLTE.)
 - GSI ROMs ship FLOSS IMS, which lacks the Unisoc AIDL stubs needed to call `IImsRadio.setCallback()`. Without this call, urild never establishes the IMS PDN bearer.
 - The stock firmware's `com.spreadtrum.ims` APK contains the required stubs but won't run unmodified on a GSI (signature mismatch, missing permissions, SELinux denials).
 

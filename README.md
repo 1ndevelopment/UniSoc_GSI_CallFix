@@ -1,6 +1,6 @@
 # GSI on Unisoc Incoming Call Fix
 
-Magisk module that restores incoming calls on some Unisoc mobiles, running a GSI (Generic System Image). Most mobile operators require VoLTE, and it is good. The stock firmware's Unisoc IMS stack is deployed to trigger IMS PDN establishment via `urild`'s `vendor.unisoc.hardware.radio.ims.IImsRadio/slot1`.
+Magisk module that restores incoming calls on some Unisoc mobiles, running a GSI (Generic System Image). Most mobile operators require VoLTE. The stock firmware's Unisoc IMS stack is deployed to trigger IMS PDN establishment via `urild`'s `vendor.unisoc.hardware.radio.ims.IImsRadio/slot1`.
 
 ## Root Cause
 
